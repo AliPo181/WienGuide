@@ -1,3 +1,1 @@
-# Wien entdecken
-
-Ein Reiseführer
+![Wien entdecken – Ein Reiseführer](bilder/wien-cover.png)
