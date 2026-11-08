@@ -1,90 +1,71 @@
+
+
+
+    
+  
+/* Die fertige Coverillustration füllt genau eine A4-Seite. */
+.deckblatt {
+  page: cover;
+  width: 210mm;
+  height: 297mm;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   break-after: page;
 }
-
-.deckblatt::before {
-  content: "G E M E I N S A M   E N T D E C K E N";
-  position: absolute;
-  top: 23mm;
-  left: 16mm;
-  right: 16mm;
-  padding-bottom: 7mm;
-  border-bottom: 1px solid #c5a26c;
-  color: #e6c99a;
-  font-size: 9pt;
-}
-
-.deckblatt h1 {
-  margin: 0 0 12mm;
-  font-family: Georgia, "Noto Serif", serif;
-  font-size: 61pt;
-  font-weight: normal;
-  line-height: 1.05;
-  letter-spacing: -1.5pt;
-  color: #fff6e6;
-  overflow-wrap: break-word;
-}
-
+.deckblatt::before, .deckblatt::after { content: none; }
 .deckblatt p {
-  max-width: 115mm;
-  margin: 0 0 5mm;
-  color: #e7d6c3;
-  font-size: 16pt;
-  line-height: 1.5;
+  width: 210mm;
+  height: 297mm;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+}
+.deckblatt img {
+  display: block;
+  width: 210mm;
+  height: 297mm;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  object-fit: cover;
 }
 
-.deckblatt::after {
-  content: "WIEN AUS UNSERER SICHT";
-  position: absolute;
-  bottom: 20mm;
-  left: 16mm;
-  right: 16mm;
-  padding-top: 7mm;
-  border-top: 1px solid #c5a26c;
-  color: #e6c99a;
-  font-size: 9pt;
-  letter-spacing: 2pt;
-}
-
-/* Das Skript setzt hier die tatsächlichen Kapitelüberschriften ein. */
 .inhaltsverzeichnis {
   padding: 12mm 4mm;
   break-after: page;
 }
-
 .inhaltsverzeichnis h1 {
   margin: 0 0 16mm;
   padding-bottom: 8mm;
-  border-bottom: 2px solid #c5a26c;
+  border-bottom: 2px solid #cf9e60;
   font-size: 30pt;
 }
-
 .inhaltsverzeichnis ol {
   margin: 0;
   padding: 0;
   list-style: none;
   counter-reset: kapitel;
 }
-
 .inhaltsverzeichnis li {
   display: flex;
   align-items: baseline;
   gap: 9mm;
   padding: 7mm 0;
-  border-bottom: 1px solid #ded6ca;
+  border-bottom: 1px solid #ddd8cd;
   counter-increment: kapitel;
   break-inside: avoid;
 }
-
 .inhaltsverzeichnis li::before {
   content: counter(kapitel, decimal-leading-zero);
   flex: 0 0 12mm;
-  color: #a4824e;
+  color: #ac773b;
   font-family: Georgia, "Noto Serif", serif;
   font-size: 21pt;
 }
-
 .inhaltsverzeichnis a {
-  color: #292724;
+  color: #203344;
   font-size: 15pt;
   text-decoration: none;
 }
@@ -93,7 +74,7 @@
 .kapitel > h1:first-child {
   margin-top: 8mm;
   padding-bottom: 8mm;
-  border-bottom: 2px solid #c5a26c;
+  border-bottom: 2px solid #cf9e60;
 }
 
 img {
@@ -106,15 +87,17 @@ img {
   object-fit: contain;
   break-inside: avoid;
 }
-
 blockquote {
   margin: 6mm 0;
   padding: 2mm 6mm;
-  border-left: 3px solid #c5a26c;
+  border-left: 3px solid #cf9e60;
   color: #5e5148;
 }
-
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ddd8cd; padding: 6px; }
 pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+
 @media print {
   body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
