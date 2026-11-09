@@ -72,6 +72,8 @@ Erlebnisse oder Besonderheiten.]
 - [Titel eurer Quelle](https://example.org)
 
 *Stand unserer Recherche: [Datum]*
+<!-- für emojis Windowstaste + Punkt-->
+
 ```
 
 ### So ersetzt ihr die Bildplatzhalter
