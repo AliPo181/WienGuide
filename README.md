@@ -1,27 +1,36 @@
-WienGuide
-Ein gemeinsamer Wien-Reiseführer aus einem Git- und GitHub-Workshop.
+# WienGuide
+
+**Ein gemeinsamer Wien-Reiseführer aus einem Git- und GitHub-Workshop.**
 
 In diesem Projekt erstellen Schüler ein gemeinsames Buch über Wien. Jede Gruppe wählt ihr Thema, ihre Orte und ihren Kapiteltitel selbst und gestaltet ihren Beitrag mit Texten und Bildern.
-
 Aus den angenommenen Beiträgen entsteht automatisch ein PDF-Reiseführer mit Deckblatt und Inhaltsverzeichnis. Die Kapitel liegen als Markdown-Dateien vor; die PDF-Erstellung läuft über GitHub Actions.
-Das fertige Buch herunterladen
-1. Oben im Repository auf Actions klicken.
-2. Den neuesten erfolgreichen Durchlauf von Reiseführer erstellen öffnen. Er ist mit einem grünen Häkchen gekennzeichnet.
-3. Unter Artifacts das Paket WienGuide herunterladen. Dafür ist eine GitHub-Anmeldung erforderlich.
-4. Die ZIP-Datei entpacken und WienGuide.pdf öffnen.
-Nach Änderungen auf main wird das PDF neu erstellt. Die Downloads der einzelnen Durchläufe stehen jeweils 30 Tage bereit.
-Aufbau des Projekts
-Datei oder Ordner	Inhalt
-deckblatt.md	Bindet das Titelbild des Reiseführers ein
-kapitel/	Kapiteldateien der Gruppen
-bilder/	Titelbild und eigene Unterordner für die Bilder jeder Gruppe
-buch.css	Gestaltung von Deckblatt, Inhaltsverzeichnis und Kapiteln
-buch_erstellen.py	Fügt die Inhalte zusammen und erzeugt das PDF
-requirements.txt	Benötigte Python-Pakete für die Bucherstellung
-.github/workflows/buch.yml	Automatische PDF-Erstellung auf GitHub
 
-##Vorlage
+## Das fertige Buch herunterladen
+
+1. Oben im Repository auf **Actions** klicken.
+2. Den neuesten erfolgreichen Durchlauf von **Reiseführer erstellen** öffnen. Er ist mit einem grünen Häkchen gekennzeichnet.
+3. Unter **Artifacts** das Paket **WienGuide** herunterladen. Dafür ist eine GitHub-Anmeldung erforderlich.
+4. Die ZIP-Datei entpacken und **WienGuide.pdf** öffnen.
+
+Nach Änderungen auf `main` wird das PDF neu erstellt. Die Downloads der einzelnen Durchläufe stehen jeweils 30 Tage bereit.
+
+## Aufbau des Projekts
+
+| Datei oder Ordner | Inhalt |
+| --- | --- |
+| `deckblatt.md` | Bindet das Titelbild des Reiseführers ein |
+| `kapitel/` | Kapiteldateien der Gruppen |
+| `bilder/` | Titelbild und eigene Unterordner für die Bilder jeder Gruppe |
+| `buch.css` | Gestaltung von Deckblatt, Inhaltsverzeichnis und Kapiteln |
+| `buch_erstellen.py` | Fügt die Inhalte zusammen und erzeugt das PDF |
+| `requirements.txt` | Benötigte Python-Pakete für die Bucherstellung |
+| `.github/workflows/buch.yml` | Automatische PDF-Erstellung auf GitHub |
+
+## Kopiervorlage für euer Kapitel
+
 Kopiert den Inhalt des folgenden Codeblocks in eure Kapiteldatei. Die äußeren Begrenzungen des Codeblocks gehören nicht in die Datei.
+
+```markdown
 # [Euer selbst gewählter Kapiteltitel]
 
 *Ein Beitrag von [euren Namen oder eurem Gruppennamen]*
@@ -63,19 +72,30 @@ Erlebnisse oder Besonderheiten.]
 - [Titel eurer Quelle](https://example.org)
 
 *Stand unserer Recherche: [Datum]*
-So ersetzt ihr die Bildplatzhalter
-1. Legt im Projektordner bilder euren Unterordner an, zum Beispiel gruppe-1.
-2. Kopiert eure Fotos dort hinein, beispielsweise als foto-1.jpg und foto-2.jpg. Verwendet einfache Dateinamen ohne Leerzeichen und achtet auf die tatsächliche Dateiendung.
+```
+
+### So ersetzt ihr die Bildplatzhalter
+
+1. Legt im Projektordner `bilder` euren Unterordner an, zum Beispiel `gruppe-1`.
+2. Kopiert eure Fotos dort hinein, beispielsweise als `foto-1.jpg` und `foto-2.jpg`. Verwendet einfache Dateinamen ohne Leerzeichen und achtet auf die tatsächliche Dateiendung.
 3. Passt die Bildpfade in eurer Kapiteldatei an. Groß- und Kleinschreibung müssen mit den Dateinamen übereinstimmen.
-4. Entfernt vor und nach dem jeweiligen Bildverweis die Kommentarzeilen <!-- ... und -->. Danach steht der Bildverweis allein im Text, zum Beispiel:
+4. Entfernt vor und nach dem jeweiligen Bildverweis die Kommentarzeilen `<!-- ...` und `-->`. Danach steht der Bildverweis allein im Text, zum Beispiel:
+
+   ```markdown
    ![Blick auf unseren ausgewählten Ort](../bilder/gruppe-1/foto-1.jpg)
-5. Löscht den zugehörigen Absatz Bildplatzhalter und ergänzt Bildbeschreibung, Bildunterschrift und Quelle.
-6. Prüft das Ergebnis in der Markdown-Vorschau von VS Code: Strg + K, danach V.
+   ```
+
+5. Löscht den zugehörigen Absatz **Bildplatzhalter** und ergänzt Bildbeschreibung, Bildunterschrift und Quelle.
+6. Prüft das Ergebnis in der Markdown-Vorschau von VS Code: **Strg + K**, danach **V**.
+
 Die Bildverweise in der Vorlage sind zunächst auskommentiert, damit die PDF-Erstellung auch ohne hochgeladene Fotos funktioniert. Wenn ihr ein Bild nicht benötigt, entfernt den gesamten zugehörigen Platzhalterblock. Verwendet eigene oder passend lizenzierte Bilder und nennt die erforderlichen Quellenangaben.
-Vor dem Pull Request prüfen
-- Liegt eure Kapiteldatei im Ordner kapitel und endet ihr Name auf .md?
+
+### Vor dem Pull Request prüfen
+
+- Liegt eure Kapiteldatei im Ordner `kapitel` und endet ihr Name auf `.md`?
 - Habt ihr die Platzhalter ersetzt oder entfernt?
 - Werden die Bilder in der Vorschau angezeigt und sind ihre Dateien mit im Commit enthalten?
 - Sind eure Quellen angegeben und alle Dateien gespeichert?
 - Habt ihr eure letzten Änderungen committed und auf euren Gruppenbranch gepusht?
+
 Nach dem Zusammenführen erstellt GitHub den aktualisierten Reiseführer. Die Kapitel werden alphabetisch nach Dateiname angeordnet.
