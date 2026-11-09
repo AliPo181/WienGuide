@@ -1,9 +1,7 @@
 WienGuide
 Ein gemeinsamer Wien-Reiseführer aus einem Git- und GitHub-Workshop.
 
-In diesem Projekt erstellen Schülerinnen und Schüler in Zweiergruppen ein gemeinsames Buch über Wien. Jede Gruppe wählt ihr Thema, ihre Orte und ihren Kapiteltitel selbst und gestaltet ihren Beitrag mit Texten und Bildern.
-
-Dabei lernen die Teilnehmenden den praktischen Ablauf der Versionsverwaltung kennen: ein Repository klonen, auf einem eigenen Branch arbeiten, Änderungen mit Commits dokumentieren, auf GitHub hochladen und über einen Pull Request zusammenführen.
+In diesem Projekt erstellen Schüler ein gemeinsames Buch über Wien. Jede Gruppe wählt ihr Thema, ihre Orte und ihren Kapiteltitel selbst und gestaltet ihren Beitrag mit Texten und Bildern.
 
 Aus den angenommenen Beiträgen entsteht automatisch ein PDF-Reiseführer mit Deckblatt und Inhaltsverzeichnis. Die Kapitel liegen als Markdown-Dateien vor; die PDF-Erstellung läuft über GitHub Actions.
 Das fertige Buch herunterladen
@@ -22,17 +20,7 @@ buch_erstellen.py	Fügt die Inhalte zusammen und erzeugt das PDF
 requirements.txt	Benötigte Python-Pakete für die Bucherstellung
 .github/workflows/buch.yml	Automatische PDF-Erstellung auf GitHub
 
-
-So tragt ihr zum Reiseführer bei
-Die folgenden Namen gelten als Beispiel für Gruppe 1. Passt die Gruppennummer in Branch, Dateiname und Bildpfaden an eure Gruppe an.
-1. Erstellt euren Branch, zum Beispiel gruppe-1.
-2. Erstellt in VS Code die Datei kapitel/gruppe-1.md und kopiert die Vorlage unten hinein.
-3. Wählt selbst einen Kapiteltitel und ersetzt die Platzhalter durch eure Inhalte. Die erste Überschrift mit # wird als Kapitelname im Inhaltsverzeichnis übernommen.
-4. Speichert eure Bilder im Ordner bilder/gruppe-1/ und passt die Bildverweise an.
-5. Speichert eure Dateien, erstellt Commits und ladet euren Branch mit git push hoch.
-6. Öffnet einen Pull Request mit base: main und compare: eurem Gruppenbranch. Die Workshop-Leitung prüft die Beiträge und führt sie zusammen.
-Bearbeitet auf eurem Gruppenbranch eure eigene Kapiteldatei und euren eigenen Bilderordner. Titel, Inhalt und Gliederung dürft ihr frei gestalten: Die folgende Vorlage ist eine Hilfe und kann angepasst werden.
-Kopiervorlage für euer Kapitel
+##Vorlage
 Kopiert den Inhalt des folgenden Codeblocks in eure Kapiteldatei. Die äußeren Begrenzungen des Codeblocks gehören nicht in die Datei.
 # [Euer selbst gewählter Kapiteltitel]
 
