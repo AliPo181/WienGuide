@@ -22,7 +22,7 @@ Der besondere Reiz liegt in der Kombination aus Tradition und Komfort. Die Kutsc
 
 Gerade bei gutem Wetter oder in den Abendstunden wird die Fahrt besonders beliebt. Wenn die Straßen langsam von Licht und Bewegung belebt werden, macht der Fiaker aus einer gewöhnlichen Rundfahrt eine besondere Wien-Erfahrung. Viele Menschen verbinden damit nicht nur eine Städtereise, sondern auch ein Gefühl von Genuss und Genuss der Stadt.
 
-![Fiaker auf der Ringstraße in Wien](../bilder/fiaker.jpg)
+<!-- ![Fiaker auf der Ringstraße in Wien](../bilder/fiaker.jpg) -->
 
 *Bildunterschrift: Fiaker auf der Ringstraße in Wien. Bildquelle: eigene Aufnahme / bereitgestelltes Referenzfoto.*
 
