@@ -1,9 +1,35 @@
-
-
-
-    
-  
-/* Die fertige Coverillustration füllt genau eine A4-Seite. */
+@page {
+  size: A4;
+  margin: 19mm 19mm 22mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "DejaVu Sans", "Noto Sans", sans-serif;
+    font-size: 9pt;
+    color: #536773;
+  }
+}
+@page cover {
+  size: A4;
+  margin: 0;
+  @bottom-center { content: none; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: #203344;
+  font-family: "DejaVu Sans", "Noto Sans", "Noto Color Emoji", sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+h1, h2, h3 { break-after: avoid; }
+h1 { color: #123e51; font-size: 29pt; line-height: 1.2; }
+h2 { color: #123e51; font-size: 15pt; line-height: 1.3; margin: 6mm 0 3mm; }
+h3 { font-size: 12pt; }
+p { margin: 0 0 3mm; orphans: 3; widows: 3; }
+a { color: #126b7a; }
+/* Nur das Deckblatt ist randlos. */
 .deckblatt {
   page: cover;
   width: 210mm;
@@ -12,16 +38,9 @@
   padding: 0;
   overflow: hidden;
   break-after: page;
+  background: #f7f0e2;
 }
-.deckblatt::before, .deckblatt::after { content: none; }
-.deckblatt p {
-  width: 210mm;
-  height: 297mm;
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-  line-height: 0;
-}
+.deckblatt p { margin: 0; padding: 0; font-size: 0; line-height: 0; }
 .deckblatt img {
   display: block;
   width: 210mm;
@@ -31,73 +50,39 @@
   margin: 0;
   object-fit: cover;
 }
-
-.inhaltsverzeichnis {
-  padding: 12mm 4mm;
-  break-after: page;
-}
+/* Inhaltsverzeichnis mit echten Kapitelnamen und Seitenzahlen. */
+.inhaltsverzeichnis { break-after: page; }
 .inhaltsverzeichnis h1 {
-  margin: 0 0 16mm;
-  padding-bottom: 8mm;
+  margin: 10mm 0 12mm;
+  padding-bottom: 7mm;
   border-bottom: 2px solid #cf9e60;
-  font-size: 30pt;
 }
-.inhaltsverzeichnis ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: kapitel;
-}
-.inhaltsverzeichnis li {
-  display: flex;
-  align-items: baseline;
-  gap: 9mm;
-  padding: 7mm 0;
-  border-bottom: 1px solid #ddd8cd;
-  counter-increment: kapitel;
-  break-inside: avoid;
-}
-.inhaltsverzeichnis li::before {
-  content: counter(kapitel, decimal-leading-zero);
-  flex: 0 0 12mm;
-  color: #ac773b;
-  font-family: Georgia, "Noto Serif", serif;
-  font-size: 21pt;
-}
-.inhaltsverzeichnis a {
-  color: #203344;
-  font-size: 15pt;
-  text-decoration: none;
-}
-
+.inhaltsverzeichnis ol { padding: 0; margin: 0; list-style: none; }
+.inhaltsverzeichnis li { padding: 6mm 0; border-bottom: 1px solid #ddd8cd; break-inside: avoid; }
+.inhaltsverzeichnis a { display: block; text-decoration: none; color: #203344; }
+.toc-nr { color: #ac773b; font-size: 13pt; white-space: nowrap; margin-right: 5mm; }
+.toc-titel { font-size: 13pt; }
+.inhaltsverzeichnis a::after { content: leader('.') target-counter(attr(href), page); font-size: 11pt; white-space: nowrap; }
 .kapitel { break-before: page; }
-.kapitel > h1:first-child {
-  margin-top: 8mm;
-  padding-bottom: 8mm;
-  border-bottom: 2px solid #cf9e60;
-}
-
+.kapitel > h1:first-child { margin-top: 6mm; padding-bottom: 6mm; border-bottom: 2px solid #cf9e60; }
+/* Bilder bleiben im Satzspiegel und passen auch unter eine Überschrift. */
 img {
   display: block;
   max-width: 100%;
-  max-height: 190mm;
+  max-height: 145mm;
   width: auto;
   height: auto;
-  margin: 7mm auto;
+  margin: 5mm auto;
   object-fit: contain;
   break-inside: avoid;
 }
-blockquote {
-  margin: 6mm 0;
-  padding: 2mm 6mm;
-  border-left: 3px solid #cf9e60;
-  color: #5e5148;
-}
-table { border-collapse: collapse; width: 100%; }
-th, td { border: 1px solid #ddd8cd; padding: 6px; }
-pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+p:has(> img) { break-inside: avoid; }
+blockquote { margin: 5mm 0; padding: 2mm 5mm; border-left: 3px solid #cf9e60; color: #5e5148; }
+.bild-fehlt { display: block; padding: 5mm; border: 1px dashed #a27645; color: #775322; font-style: italic; }
+table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 9pt; }
+th, td { border: 1px solid #ddd8cd; padding: 5px; overflow-wrap: anywhere; }
+tr { break-inside: avoid; }
+pre { white-space: pre-wrap; font-size: 9pt; }
+code { font-family: "DejaVu Sans Mono", monospace; overflow-wrap: anywhere; }
 
-@media print {
-  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-}
-
+.kapitel h1:not(:first-child) { font-size: 17pt; line-height: 1.3; margin: 6mm 0 3mm; }

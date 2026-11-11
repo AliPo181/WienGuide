@@ -3,6 +3,15 @@ name: Reiseführer erstellen
 on:
   push:
     branches: [main]
+    paths:
+      - "deckblatt.md"
+      - "kapitel/**"
+      - "bilder/**"
+      - "buch.css"
+      - "buch_erstellen.py"
+      - "requirements.txt"
+      - "tests/**"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 permissions:
@@ -10,36 +19,8 @@ permissions:
 
 jobs:
   buch:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 15
-
-    steps:
-      - name: Repository herunterladen
-        uses: actions/checkout@v6
-
-      - name: Python einrichten
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-
-      - name: Programme installieren
-        run: |
-          python -m pip install -r requirements.txt
-          python -m playwright install --with-deps chromium
-
-      - name: Schriftarten installieren
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-noto-core fonts-noto-color-emoji
-          fc-cache -f
-
-      - name: Buch erstellen
-        run: python buch_erstellen.py
-
-      - name: PDF zum Download bereitstellen
-        uses: actions/upload-artifact@v5
-        with:
-          name: WienGuide
-          path: ausgabe/WienGuide.pdf
-          if-no-files-found: error
-          retention-days: 30
+    uses: ./.github/workflows/reisefuehrer-pruefen.yml
+    with:
+      artifact_name: WienGuide
+      retention_days: 30
+      strict_images: false
