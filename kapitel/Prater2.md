@@ -22,7 +22,7 @@ Der Wiener Prater ist ein bekannter Freizeitpark und ein beliebtes Ausflugsziel 
 
 > **Bildplatzhalter 2:** Hier soll euer zweites Foto erscheinen.
 
-![Beschreibung eures zweiten Fotos]("C:\Users\User\Downloads\WienGuide\WienGuide\bilder\prater4.jpg")
+![Beschreibung eures zweiten Fotos](../bilder/prater4.jpg)
 
 
 *[Bildunterschrift sowie Bildquelle, Urheber und gegebenenfalls Lizenz]*
